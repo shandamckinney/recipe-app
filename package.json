@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client": "npm start --prefix client",
-    "server": "npm start server",
+    "server": "npm start",
     "start": "node server",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
