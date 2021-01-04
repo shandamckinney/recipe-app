@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
+const favicon = require('express-favicon');
 
 
 var db = require('./database');
@@ -13,6 +14,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(favicon(__dirname + '/public/favicon.png'));
+
 app.use('/api/recipes', require('./api/recipes'));
 
 if (ENV === 'production') {
